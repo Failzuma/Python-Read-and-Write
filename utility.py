@@ -42,7 +42,7 @@ def GetModuleBaseAddress(pid, moduleName):
             while (kernel32.Module32Next(hSnap, ctypes.byref(modEntry))):
                 moduleCmp(modEntry)
     
-    kernel32.closeHandle(hSnap)
+    kernel32.CloseHandle(hSnap)
     return baseAddress
 
 def FindDMAAddy(hProc, base, offsets, arch=64):
